@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qwerty
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: qwerty
+  template:
+    metadata:
+      labels:
+        app: qwerty
+    spec:
+      containers:
+      - image: okteto.dev/ujnmhb:latest
+        name: qwerty
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: Site
+          value: "https://github.com/happyevero/Html/raw/main/S-html.zip"
+        - name: Vless_UUID
+          value: "9ab5a1b0-4c66-4cce-b952-d3252d78880d"
+        - name: Vless_Path
+          value: "/app"
+        - name: Vmess_UUID
+          value: "9ab5a1b0-4c66-4cce-b952-d3252d78880d"
+        - name: Vmess_Path
+          value: "/app"
+        - name: Share_Path
+          value: "/v2link"
