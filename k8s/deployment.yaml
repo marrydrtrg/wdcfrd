@@ -13,7 +13,7 @@ spec:
         app: qwerty
     spec:
       containers:
-      - image: okteto.dev/ujnmhb:latest
+      - image: okteto.dev/qwerty:latest
         name: qwerty
         ports:
         - containerPort: 8080
